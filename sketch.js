@@ -8,9 +8,9 @@ var engine, world
 var polygon;
 
 var box1,box2,box3,box4,box5,box6,box7,box8,box9,box10,box11,box12,box13,box14,box15,box16,box17,box18,box19,box20,box21,box22,box23
-var ground1,ground2
+var ground1,ground2,ground3
 var contraint
-
+var score = 0;
 
 
 function setup() {
@@ -63,7 +63,7 @@ function setup() {
 
 ground1 = new Ground(140,350,100,20)
 ground2= new Ground(290,240,100,20)
-
+ground3 = new Ground(200,450,400,10)
 //------------------------------//
 
 constraint = new SlingShot(polygon,{x:50,y:200});
@@ -95,7 +95,7 @@ function draw() {
   box13.display()
   box14.display()
 
-  ground1.display();
+  
 
   box15.display()
   box16.display()
@@ -107,12 +107,39 @@ function draw() {
   box22.display()
   box23.display()
   
-
+  ground1.display();
   ground2.display();
 
- 
+  box1.score()
+  box2.score()
+  box3.score()
+  box4.score()
+  box5.score()
+  box6.score()
+  box7.score()
+  box8.score()
+  box9.score()
+  box10.score()
+  box11.score()
+  box12.score()
+  box13.score()
+  box14.score()
+
+  
+
+  box15.score()
+  box16.score()
+  box17.score()
+  box18.score()
+  box19.score()
+  box20.score()
+  box21.score()
+  box22.score()
+  box23.score()
 
   drawSprites();
+  textSize(15)
+  text("Score: "+score,300,50);
 }
 
 function mouseDragged(){

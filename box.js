@@ -5,11 +5,11 @@ class Box {
        
         
     }
-    this.image = loadImage("boxes.png")
+
     this.width = 20;
     this.height = 30;
     this.body = Bodies.rectangle(x, y,this.width,this.height, options);
-    
+    this.visibility = 225;
     
     World.add(world, this.body);
   }
@@ -31,12 +31,19 @@ class Box {
      World.remove(world,this.body);
      push();
    
-    this.visibility = this.visibility - 1
+    this.visibility = this.visibility - 15
       tint(255,this.visibility)
    //rect(0,0, this.width, this.height);
     pop();
 }
   }
+
+  score(){
+    if(this.visibility === 0){
+      score = score+10
+    }
+  }
+
 };
 
 
